@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InkNote</string>
+
+    <!-- 首页 -->
+    <string name="home_title">我的笔记</string>
+    <string name="home_new_note">新建笔记</string>
+    <string name="home_empty">还没有笔记\n点右下角「新建笔记」开始</string>
+
+    <!-- 笔记卡片 -->
+    <string name="note_untitled">未命名笔记</string>
+    <string name="note_page_count">%1$d 页</string>
+
+    <!-- 纸型选择（只在新建笔记时出现一次） -->
+    <string name="paper_picker_title">选择纸张</string>
+    <string name="paper_picker_hint">纸型在创建后不能修改，这本笔记的每一页都会沿用</string>
+    <string name="paper_screen">与屏幕相同</string>
+    <string name="paper_a5_portrait">A5 竖</string>
+    <string name="paper_a5_landscape">A5 横</string>
+    <string name="paper_a4_portrait">A4 竖</string>
+    <string name="paper_a4_landscape">A4 横</string>
+    <string name="paper_a3_portrait">A3 竖</string>
+    <string name="paper_a3_landscape">A3 横</string>
+
+    <!-- 设置 -->
+    <string name="settings_title">设置</string>
+    <string name="home_settings">设置</string>
+    <string name="settings_section_turning">翻页方式</string>
+    <string name="settings_turn_horizontal">左右滑动</string>
+    <string name="settings_turn_horizontal_desc">手指向左滑翻到下一页</string>
+    <string name="settings_turn_vertical">上下滑动</string>
+    <string name="settings_turn_vertical_desc">手指向上滑翻到下一页</string>
+    <string name="settings_section_writing">书写</string>
+    <string name="settings_snap_to_page">滚动吸附到整页</string>
+    <string name="settings_snap_to_page_desc">关闭时可以停在两页之间，同时看到上一页和下一页</string>
+    <string name="settings_stylus_only">只识别手写笔</string>
+    <string name="settings_stylus_only_desc">开启后手指和鼠标不会留下笔迹，只用于翻页</string>
+    <string name="settings_section_diagnostics">诊断</string>
+    <string name="settings_show_stroke_info">显示笔迹信息</string>
+    <string name="settings_show_stroke_info_desc">显示上一笔的采样点数、压感区间和输入来源</string>
+
+    <!-- 笔的二级面板 -->
+    <string name="panel_pen_title">钢笔</string>
+    <string name="panel_highlighter_title">荧光笔</string>
+    <string name="panel_done">完成</string>
+    <string name="panel_back">返回上一级</string>
+    <string name="panel_color">颜色</string>
+    <string name="panel_width">粗细</string>
+    <string name="panel_opacity">透明度</string>
+    <string name="panel_opacity_hint">越低越能透出下面的字</string>
+    <string name="panel_test_pad">试写区</string>
+    <string name="panel_clear_test">清空</string>
+    <string name="editor_open_panel">展开设置</string>
+    <string name="brush_base_width">基础粗细</string>
+    <string name="brush_base_width_hint">满压力时的线宽</string>
+    <string name="brush_sensitivity">压感灵敏度</string>
+    <string name="brush_sensitivity_hint">越大，轻写就越粗</string>
+    <string name="brush_strength">压感强度</string>
+    <string name="brush_strength_hint">越大，轻重之间的粗细差距越大</string>
+    <string name="brush_smoothness">平滑度</string>
+    <string name="brush_smoothness_hint">越大越顺，但笔尖会有一点滞后</string>
+
+    <!-- 编辑页 -->
+    <string name="editor_back">返回</string>
+    <!-- 页码指示：%1$d 当前页，%2$d 总页数 -->
+    <string name="editor_page_indicator">%1$d / %2$d</string>
+    <string name="editor_add_page">新建页</string>
+
+    <!-- 页列表 -->
+    <string name="page_list_title">全部页面（%1$d 页）</string>
+    <string name="page_list_item">第 %1$d 页</string>
+    <string name="page_list_add">新建页</string>
+    <string name="page_list_duplicate">复制本页</string>
+    <string name="page_list_delete">删除这一页</string>
+    <string name="page_list_move_up">上移一页</string>
+    <string name="page_list_move_down">下移一页</string>
+    <string name="page_list_bookmark">书签</string>
+    <!-- %1$d 已标记的页数 -->
+    <string name="page_list_only_bookmarks">只看书签（%1$d）</string>
+    <string name="page_list_no_bookmarks">还没有标记过的页面</string>
+
+    <!-- 书签 -->
+    <!-- %1$d 页号 -->
+    <string name="bookmark_title">第 %1$d 页的书签</string>
+    <string name="bookmark_label_hint">标签（可留空）</string>
+    <string name="bookmark_hint">写几个字方便以后查找，例如「重点」「待办」</string>
+    <string name="bookmark_no_label">已标记</string>
+    <string name="bookmark_remove">移除书签</string>
+    <string name="editor_undo">撤销</string>
+    <string name="editor_redo">重做</string>
+
+    <!-- 笔色：三个固定预设 + 一个自定义槽位 -->
+    <string name="ink_color_black">墨黑</string>
+    <string name="ink_color_red">红</string>
+    <string name="ink_color_blue">蓝</string>
+    <string name="color_custom">自定义</string>
+    <string name="color_adjust">调整颜色…</string>
+    <string name="color_custom_title">自定义颜色</string>
+    <string name="color_hue">色相</string>
+    <string name="color_saturation">饱和度</string>
+    <string name="color_brightness">明度</string>
+    <string name="color_hex">十六进制</string>
+
+    <!-- 笔宽 -->
+    <string name="ink_width_xs">极细</string>
+    <string name="ink_width_s">细</string>
+    <string name="ink_width_m">中</string>
+    <string name="ink_width_l">粗</string>
+    <string name="ink_width_xl">极粗</string>
+    <string name="editor_clear">清空整页</string>
+    <string name="editor_stroke_count">%1$d 笔</string>
+    <string name="editor_stylus_only">仅手写笔</string>
+    <!-- %1$d 采样点数，%2$s 压感区间，%3$s 实际笔宽区间 -->
+    <string name="editor_stroke_stats">上笔 %1$d 点 · 压感 %2$s · 笔宽 %3$s px</string>
+
+    <!-- 笔迹风格（切换只影响之后新写的笔画） -->
+    <string name="style_pressure">压感</string>
+    <string name="style_taper">笔锋</string>
+    <string name="style_velocity">速度</string>
+
+    <!-- 工具 -->
+    <string name="editor_tool_pen">钢笔</string>
+    <string name="editor_tool_highlighter">荧光笔</string>
+    <string name="editor_tool_eraser">橡皮</string>
+    <!-- 橡皮状态提示。侧键只能"单击切换"：系统只把 ACTION_UP 交给应用 -->
+    <string name="editor_eraser_status">橡皮 · 单击笔侧键切回钢笔</string>
+    <string name="editor_side_button_hint">单击笔侧键切橡皮</string>
+
+    <!-- 输入工具名（对应 MotionEvent.getToolType 的取值） -->
+    <string name="tool_stylus">手写笔</string>
+    <string name="tool_eraser">笔尾橡皮</string>
+    <string name="tool_finger">手指</string>
+    <string name="tool_mouse">鼠标</string>
+    <string name="tool_unknown">未知</string>
+
+    <!-- 清空确认 -->
+    <string name="clear_canvas_title">清空整页？</string>
+    <string name="clear_canvas_message">当前 %1$d 笔笔迹将被删除，此操作无法撤销。</string>
+
+    <!-- 通用 -->
+    <string name="action_delete">删除</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_clear">清空</string>
+    <string name="action_confirm">确定</string>
+    <string name="action_rename">改名</string>
+
+    <!-- 改名 -->
+    <string name="rename_note_title">笔记名称</string>
+    <string name="rename_note_hint">留空则显示为「未命名笔记」</string>
+
+    <string name="delete_note_title">删除这篇笔记？</string>
+    <string name="delete_note_message">「%1$s」将被永久删除，无法恢复。</string>
+</resources>

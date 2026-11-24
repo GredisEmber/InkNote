@@ -1,0 +1,73 @@
+# ============================================================================
+# Version Catalog —— InkNote
+#
+# 版本号不是猜的，来源有两处：
+#   1. 2026-09-23 从 Google Maven / Maven Central 的 maven-metadata.xml 读到的
+#      当前 stable（AGP 9.4.1、core-ktx 1.19.0 等）；
+#   2. 本机 Android Studio 2026.1 生成的 AGP 9 工程模板（G:\doubao\Y700Notes），
+#      它给出了 AGP 9 内置 Kotlin 的实际版本 —— 这个必须以本机为准。
+#
+# ⚠️ AGP 9 的关键约束：
+#   AGP 9 自带 Kotlin 支持（built-in Kotlin），Kotlin 版本由 AGP 决定，
+#   不能再单独 apply org.jetbrains.kotlin.android。
+#   所以这里的 kotlin 版本必须与 AGP 内置版本一致，否则 Compose 编译器插件会
+#   报 "Compose Compiler plugin version X does not match Kotlin version Y"。
+# ============================================================================
+
+[versions]
+# --- 构建工具链 -------------------------------------------------------------
+agp = "9.4.1"
+# 与 AGP 9.4.1 内置 Kotlin 对齐（取自本机 Studio 模板）
+kotlin = "2.2.10"
+
+# --- AndroidX ---------------------------------------------------------------
+# 同步取自本机 Studio 模板，是已被这套 AGP/BOM 组合验证过的版本
+coreKtx = "1.10.1"
+lifecycleRuntimeKtx = "2.6.1"
+activityCompose = "1.8.0"
+
+# --- Compose ----------------------------------------------------------------
+# Compose BOM 统一管理所有 androidx.compose.* 的版本。
+# 用 2026.02.01 而不是更新的 2026.09.00：Compose 运行时有最低编译器版本要求，
+# 而编译器版本被 AGP 9.4.1 内置的 Kotlin 2.2.10 锁死了，不能随意往上顶。
+composeBom = "2026.02.01"
+
+# --- 测试 -------------------------------------------------------------------
+# JUnit 4：手写引擎的压感曲线和平滑几何是纯数学，能在 JVM 上验证，
+# 不依赖真机也不依赖笔 —— 这是 Step 2 里唯一"可证明正确"的部分，必须测。
+junit = "4.13.2"
+
+# --- 持久化 -----------------------------------------------------------------
+# ⚠️ KSP 版本必须和 AGP 9 内置的 Kotlin 严格对应。
+# 本项目 Kotlin = 2.2.10（由 AGP 9.4.1 决定，见上面的注释），
+# 所以 KSP 只能是 2.2.10-2.0.2 —— 写别的版本 Gradle 会直接报
+# "KSP requires Kotlin x.y.z"。
+ksp = "2.2.10-2.0.2"
+# Room 2.7 起 room-ktx 已并入 room-runtime，只需要 runtime + compiler 两个 artifact
+room = "2.8.5"
+
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+
+# Compose：platform() 引入 BOM，下面这些不写版本号
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+# 只申请 Compose 编译器插件；Kotlin 本身由 AGP 9 内置，不再 apply kotlin.android
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+# KSP：Room 的注解处理器。Kotlin 2.0 之后 kapt 与 AGP 内置 Kotlin 冲突较多，
+# KSP 是官方推荐路线，编译也快得多。
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

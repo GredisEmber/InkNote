@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      XML 主题只负责「窗口层」——启动背景、状态栏/导航栏底色。
+      所有实际 UI 都由 Compose 的 InkNoteTheme 控制，所以这里故意
+      不继承 Material Components 主题，也就不需要引入 com.google.android.material 依赖。
+    -->
+    <style name="Theme.InkNote" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/ink_window_background</item>
+    </style>
+</resources>

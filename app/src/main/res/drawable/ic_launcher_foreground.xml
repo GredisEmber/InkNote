@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  自适应图标前景层。
+  画的是「一支笔 + 一道起笔的弧线」：弧线用不等宽的两段模拟运笔的轻重变化。
+  安全区是中心 72x72，所以所有图形都收在 30~78 之间。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 起笔：粗、饱和 -->
+    <path
+        android:pathData="M33,74 C41,66 47,58 54,48"
+        android:strokeColor="#FF4FA3FF"
+        android:strokeWidth="9"
+        android:strokeLineCap="round" />
+
+    <!-- 收笔：细、淡，模拟提笔 -->
+    <path
+        android:pathData="M54,48 C59,41 63,36 67,31"
+        android:strokeColor="#994FA3FF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round" />
+
+    <!-- 笔杆 -->
+    <path
+        android:fillColor="#FFE8F1FF"
+        android:pathData="M63,26 L74,15 A5,5 0 0 1 81,22 L70,33 Z" />
+
+    <!-- 笔尖 -->
+    <path
+        android:fillColor="#FFFFC24B"
+        android:pathData="M63,26 L70,33 L67,31 Z" />
+
+    <!-- 落笔点 -->
+    <path
+        android:fillColor="#FFFFC24B"
+        android:pathData="M72,80 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+</vector>
